@@ -18,6 +18,10 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '3000:3000'
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - '5672:5672'
   mongodb-primary:
     image: docker.io/bitnami/mongodb:7.0
     environment:
