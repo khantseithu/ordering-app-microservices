@@ -1,9 +1,10 @@
 import { AbstractRepository } from '@app/common';
 import { Order } from './schemas/order.schema';
-import { Logger } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { Connection, Model } from 'mongoose';
 
+@Injectable()
 export class OrdersRepository extends AbstractRepository<Order> {
   protected readonly logger: Logger = new Logger(OrdersRepository.name);
 
